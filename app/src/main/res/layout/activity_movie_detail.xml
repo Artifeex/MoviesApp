@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MovieDetailActivity">
+    
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/imageViewPoster"
+            android:layout_width="match_parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@tools:sample/avatars"
+            android:adjustViewBounds="true"
+            android:contentDescription="@null"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/textViewTitle"
+            app:layout_constraintTop_toBottomOf="@+id/imageViewPoster"
+            android:layout_width="match_parent"
+            android:textSize="16sp"
+            tools:text="Title"
+            android:padding="8dp"
+            android:textStyle="bold"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/textViewYear"
+            app:layout_constraintTop_toBottomOf="@+id/textViewTitle"
+            android:layout_width="match_parent"
+            android:textSize="16sp"
+            tools:text="1998"
+            android:padding="8dp"
+            android:textColor="@android:color/holo_orange_light"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/textViewDescription"
+            app:layout_constraintTop_toBottomOf="@+id/textViewYear"
+            android:layout_width="match_parent"
+            android:textSize="16sp"
+            tools:text="DescriptionToMovie"
+            android:padding="8dp"
+            android:layout_height="wrap_content"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewTrailers"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:listitem="@layout/trailer_item"
+            tools:itemCount="3"
+            android:nestedScrollingEnabled="false"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintTop_toBottomOf="@id/textViewDescription"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewReviews"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:itemCount="3"
+            tools:listitem="@layout/review_item"
+            android:nestedScrollingEnabled="false"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintTop_toBottomOf="@id/recyclerViewTrailers"/>
+
+        <ImageView
+            android:id="@+id/imageViewStar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="@+id/imageViewPoster"
+            app:layout_constraintTop_toBottomOf="@+id/imageViewPoster"
+            app:layout_constraintBottom_toBottomOf="@+id/imageViewPoster"
+            android:layout_margin="16dp"
+            tools:srcCompat="@android:drawable/btn_star_big_on" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
