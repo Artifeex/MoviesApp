@@ -10,12 +10,12 @@ public interface ApiService {
 //            "Accept: application/json",
 //            "X-API-KEY: ТУТ-ВАШ-API-КЛЮЧ"
 //    })
-    @GET("v1.3/movie?token=HEGYVVJ-G864NWE-HCMG3DY-GQTRY8K&rating.kp=7-10&sortField=votes.kp&sortType=-1&limit=40")
+    @GET("v1.4/movie?token=HEGYVVJ-G864NWE-HCMG3DY-GQTRY8K&rating.kp=7-10&sortField=votes.kp&sortType=-1&limit=40")
     Single<MovieResponse> loadMovies(@Query("page") int page);
 
-    @GET("v1.3/movie?token=HEGYVVJ-G864NWE-HCMG3DY-GQTRY8K&selectFields=videos.trailers")
+    @GET("v1.4/movie?token=HEGYVVJ-G864NWE-HCMG3DY-GQTRY8K&selectFields=videos")
     Single<TrailerResponse> loadTrailers(@Query("id") int id);
 
-    @GET("v1/review?token=HEGYVVJ-G864NWE-HCMG3DY-GQTRY8K")
+    @GET("v1.4/review?token=HEGYVVJ-G864NWE-HCMG3DY-GQTRY8K")
     Single<ReviewResponse> loadReviews(@Query("movieId") int movieId);
 }
